@@ -45,6 +45,8 @@ static void drawLabel(C2D_TextBuf buf, const char* s, float x, float y, float sc
     C2D_DrawText(&t, C2D_WithColor, x, y, 0.5f, scale, scale, color);
 }
 
+// loading and saving into text file in the 3ds sd card
+
 static int loadBest(){
     FILE* f = fopen("smdc:/dodger_best.txt", "r");
     if (!f) return 0;
@@ -82,6 +84,7 @@ int main(){
     int best = loadBest();
     
     int score = 0;
+    int lives = 3;
     int spawnTimer = 0;
     std::srand(static_cast<unsigned>(std::time(nullptr)));
 
@@ -92,6 +95,7 @@ int main(){
         player = {TOP_W / 2 - 12.0f, SCREEN_H - 40.0f, 24.0f, 3.5f};
         blocks.clear();
         score = 0;
+        lives = 3;
         spawnTimer = 0;
         alive = true;
     };
@@ -105,6 +109,8 @@ int main(){
         if (kDown & KEY_START) break;
 
         // update
+
+        // reading touch input
         touchPosition touch;
         hidTouchRead(&touch);
         bool touching = (kHeld & KEY_TOUCH) != 0;
@@ -147,7 +153,11 @@ int main(){
                     blocks[i].y += blocks[i].speed;
                     // collision overlap 
                     if (overlap(player, blocks[i])) {
-                        alive = false;
+                        lives--;
+                        blocks.erase(blocks.begin() + i);
+                        if (lives <= 0){
+                            alive = false;
+                        }
                         // score system
                         if (score > best){
                             best = score;
@@ -190,10 +200,23 @@ int main(){
                 const u32 white = C2D_Color32(255, 255, 255, 255);
 
                 drawLabel(textBuf, "DODGER", 100.0f, 10.0f, 1.2f, white);
+
                 snprintf(line, sizeof line, "Score: %d", score);
                 drawLabel(textBuf, line, 20.0f, 60.0f, 0.9f, white);
                 snprintf(line, sizeof line, "Best: %d", best);
                 drawLabel(textBuf, line, 20.0f, 90.0f, 0.9f, white);
+
+                // drawing the lives
+                for (int i = 0; i < lives; i++){
+                    C2D_DrawRectSolid(
+                        110.0f + i * 35.0f,
+                        150.0f, 
+                        0.0f,
+                        25.0f,
+                        25.0f,
+                        C2D_Color32(80, 220, 140, 255)
+                    );
+                }
 
                 if (!alive){
                     C2D_DrawRectSolid(100.0f, 150.0f, 0.0f, 120.0f, 40.0f, C2D_Color32(80, 220, 140, 255));
@@ -202,10 +225,6 @@ int main(){
                 if (touching){
                     C2D_DrawCircleSolid(touch.px, touch.py, 0.0f, 6.0f, C2D_Color32(255, 220, 80, 255));
                 }
-
-
-
-
 
                 C3D_FrameEnd(0);
         
