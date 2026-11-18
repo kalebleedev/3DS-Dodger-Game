@@ -15,6 +15,9 @@ This is a 3DS Homebrew application that is a simple 2D game where the user dodge
 ![Game Running](Assets/Screenshots/Game-Running.png)
 ![Game Over](Assets/Screenshots/Game-Over.png)
 
+# Reflection
+- I've been wondering how to make a game on 3DS for quite some time, especially since I grew up with one. Compared to Unity and Godot, devkitpro is similar to OpenGL where you don't have the hand-holding and must handwrite every process. I think it was a good experience, especially since this game is mostly logic and conditionals.
+
 # Tech Stack
 Backend - C++
 Library/Framework - DevKitPro
