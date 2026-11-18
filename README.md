@@ -11,7 +11,8 @@ This is a 3DS Homebrew application that is a simple 2D game where the user dodge
 -- Simple UI creation for score | lives | restarting
 
 # Screenshots
-
+### Game Running
+![Game Running] (Assets/game-running.png)
 
 # Tech Stack
 Backend - C++
