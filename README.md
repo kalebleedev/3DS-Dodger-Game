@@ -14,7 +14,9 @@ This is a 3DS Homebrew application that is a simple 2D game where the user dodge
 
 
 # Tech Stack
-
+Backend - C++
+Library/Framework - DevKitPro
+Version Control - Git, Github
 
 ## Getting Started
 ### Prerequisites
@@ -83,4 +85,7 @@ dodger/
 ```
 
 ## Future Improvement
+- [ ] Replace the characters with better looking sprites
+- [ ] Make a home screen UI, settings UI, etc
+- [ ] Add some music
 
