@@ -25,5 +25,62 @@ This is a 3DS Homebrew application that is a simple 2D game where the user dodge
 ### Installation
 **1. Clone the repository
 
-**2. 
+**2. Install Dependencies
+```bash
+sudo dkp-pacman -S 3ds-dev 3ds-examples
+```
+- Check that compiler is installed
+
+```bash
+arm-none-eabi-g++ --version
+```
+**3. Copy project template into new folder
+```bash
+cp -r $DEVKITPRO/examples/3ds/templates/application dodger
+cd dodger
+ls
+```
+
+**4. Make a new folder called .vscode in the directory and add this.
+```bash
+{
+  "configurations": [
+    {
+      "name": "Nintendo 3DS",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/opt/devkitpro/libctru/include",
+        "/opt/devkitpro/devkitARM/arm-none-eabi/include"
+      ],
+      "compilerPath": "/opt/devkitpro/devkitARM/bin/arm-none-eabi-g++",
+      "cStandard": "c11",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "gcc-arm"
+    }
+  ],
+  "version": 4
+}
+```
+
+**5. Once this is set up, it's ready.
+```bash
+make clean
+make
+```
+**6. Run the 3DSX file on emulator.
+
+## Project Structure
+```text
+dodger/
+├── .vscode/
+├── build/
+├── source/
+    └── main.cpp
+└── dodger.3dsx
+└── dodger.elf
+└── Makefle
+└── README.md
+```
+
+## Future Improvement
 
