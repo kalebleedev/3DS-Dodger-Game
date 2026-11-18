@@ -12,8 +12,8 @@ This is a 3DS Homebrew application that is a simple 2D game where the user dodge
 
 # Screenshots
 ### Game Running
-![Game Running](Assets/Game-Running.png)
-![Game Over](Assets/Game-Over.png)
+![Game Running](Assets/Screenshots/Game-Running.png)
+![Game Over](Assets/Screenshots/Game-Over.png)
 
 # Tech Stack
 Backend - C++
