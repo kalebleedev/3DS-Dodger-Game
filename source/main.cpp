@@ -220,7 +220,7 @@ int main(){
 
                 if (!alive){
                     C2D_DrawRectSolid(100.0f, 150.0f, 0.0f, 120.0f, 40.0f, C2D_Color32(80, 220, 140, 255));
-                    drawLabel(textBuf, "RESTART", 122.0f, 158.0f, 0.8f, C2D_Color32(10, 20, 20, 255));
+                    drawLabel(textBuf, "RESTART", 115.0f, 158.0f, 0.8f, C2D_Color32(10, 20, 20, 255));
                 }
                 if (touching){
                     C2D_DrawCircleSolid(touch.px, touch.py, 0.0f, 6.0f, C2D_Color32(255, 220, 80, 255));
