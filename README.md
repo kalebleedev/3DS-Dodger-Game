@@ -16,5 +16,14 @@ This is a 3DS Homebrew application that is a simple 2D game where the user dodge
 # Tech Stack
 
 
-# Getting Started
+## Getting Started
+### Prerequisites
+- devkitpro from devkitpro.org
+- latest version of C++ on VSCode or dedicated compiler
+- emulator that runs 3DSX files such as Azahar or 3DS
+
+### Installation
+**1. Clone the repository
+
+**2. 
 
