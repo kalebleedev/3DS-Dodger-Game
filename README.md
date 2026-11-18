@@ -4,15 +4,16 @@ This is a 3DS Homebrew application that is a simple 2D game where the user dodge
 
 # Features
 
--- Player and Enemies
--- Movement Controls 
--- Lives and Overlap Mechanics
--- Score System
--- Simple UI creation for score | lives | restarting
+- Player and Enemies
+- Movement Controls 
+- Lives and Overlap Mechanics
+- Score System
+- Simple UI creation for score | lives | restarting
 
 # Screenshots
 ### Game Running
-![Game Running] (Assets/Game-Running.png)
+![Game Running](Assets/Game-Running.png)
+![Game Over](Assets/Game-Over.png)
 
 # Tech Stack
 Backend - C++
